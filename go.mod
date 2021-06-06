@@ -1,3 +1,3 @@
-module github.com/roman-mazur/design-practice-2-template
+module github.com/drewmeltpool/horizontal-scale
 
-go 1.15
+go 1.16
