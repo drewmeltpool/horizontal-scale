@@ -1,0 +1,5 @@
+go_testedBinary {
+  name: "integration",
+  pkg: "github.com/drewmeltpool/horizontal-scale/integration",
+  testPkg: "./..."
+}
