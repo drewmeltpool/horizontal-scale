@@ -1,24 +1,33 @@
-go_testedbinary {
+go_testedBinary {
   name: "server",
-  // TODO: Відкорегуйте ім'я пакета.
   pkg: "github.com/drewmeltpool/horizontal-scale/cmd/server",
   srcs: [
     "httptools/**/*.go",
     "signal/**/*.go",
     "cmd/server/*.go"
-  ]
+  ],
+  testPkg: "./cmd/server/..."
 }
 
-go_testedbinary {
+go_testedBinary {
   name: "lb",
-  // TODO: Відкорегуйте ім'я пакета.
   pkg: "github.com/drewmeltpool/horizontal-scale/cmd/lb",
   srcs: [
     "httptools/**/*.go",
     "signal/**/*.go",
     "cmd/lb/*.go"
-  ]
-  // TODO: Додайте запуск тестів для балансувальника.
+  ],
+  testPkg: "./cmd/lb/..."
 }
 
-// TODO: Додайте модуль для інтеграційних тестів.
+go_testedBinary {
+  name: "db",
+  pkg: "github.com/drewmeltpool/horizontal-scale/cmd/db",
+  srcs: [
+    "httptools/**/*.go",
+    "datastore/**/*.go",
+    "signal/**/*.go",
+    "cmd/db/*.go"
+  ],
+  testPkg: "./datastore/..."
+}
